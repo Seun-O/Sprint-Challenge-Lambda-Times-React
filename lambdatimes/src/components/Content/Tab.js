@@ -1,6 +1,28 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const STabs = styled.div`
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: row;
+  color: #fff;
+  background-color: #333;
+  margin: 0 5px;
+  padding: 2px 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  ${props => (props.tab == props.selectedTab ? `active-tab` : null)}
+`;
 
 const Tab = props => {
   /* Using your props, determine if the `tab` prop matches the `selectedTab` prop, 
@@ -11,14 +33,10 @@ const Tab = props => {
     props.selectedTabHandler(props.tab);
   };
 
-  console.log(props.selectedTab);
   return (
-    <div
-      className={props.tab === props.selectedTab ? `tab active-tab` : `tab`}
-      onClick={selectTab}
-    >
+    <STabs tab={props.tab} selectedTab={props.selectedTab} onClick={selectTab}>
       {props.tab.toUpperCase()}
-    </div>
+    </STabs>
   );
 };
 
