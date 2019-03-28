@@ -21,7 +21,10 @@ const STabs = styled.div`
     text-decoration: underline;
   }
 
-  ${props => (props.tab == props.selectedTab ? `active-tab` : null)}
+  ${props =>
+    props.tab === props.selectedTab
+      ? `background-color: #fff; color: #333; border: 2px solid #333;`
+      : null}
 `;
 
 const Tab = props => {

@@ -42,11 +42,11 @@ const SSpan = styled.span`
       ? `text-align: right;margin-right: 25px;flex: 1;`
       : null}
 `;
-const Header = () => {
+const Header = props => {
   return (
-    <SHeader>
+    <SHeader style={props.topBar}>
       <SSpan type="date">SMARCH 32, 2018</SSpan>
-      <SH1>Lambda Times</SH1>
+      <SH1 style={props.header}>Lambda Times</SH1>
       <SSpan type="temp">98°</SSpan>
     </SHeader>
   );
